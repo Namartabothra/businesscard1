@@ -1,0 +1,28 @@
+server:
+  port: 8081
+  servlet:
+    context-path: /business-card
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/business-card  # Make sure to include the URL
+    username: businesscard
+    password: businesscard
+    driver-class-name: org.postgresql.Driver  # Use hyphen instead of camel case
+
+  jackson:
+    time-zone: UTC
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+      show-sql: false
+      properties:
+        hibernate:
+          default_schema: public
+          format_sql: true
+          jdbc.time_zone: UTC
+
+jwt:
+  secret: d89fb26ce0eb76476d56401377b8f2f42d90031e41d1d534559a38d7618fb09b263527c76a623e3da96a11c503dca25d0e631bca7eac57e2a5176d599dc981f1
+  validity: 86400000
